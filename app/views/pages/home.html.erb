@@ -1,5 +1,6 @@
 <div class="jumbotron">
   <h1 class="display-4" style="text-align:center;">Calculation App</h1>
+  
  <div class="well" id="chat_form" style="height:300px; overflow-y:scroll;">
    <% @expressions.each do |expression| %>
         <%= render 'expressions/expression', expression: expression %>
@@ -13,5 +14,11 @@
             <%= f.submit "Calculate", class:"btn btn-primary" %>
         </div>
     </div>
-    <% end %>
+<% end %>
+<% flash.each do |type, msg| %>
+    <div class="alert alert-info">
+        <%= msg %>
+    </div>
+<% end %>
+
 </div>

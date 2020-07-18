@@ -1,5 +1,6 @@
 class Expression < ApplicationRecord
     after_create_commit  :send_expressiom
+    validates_presence_of :body, :message => 'Please enter valid mathematical expression.'
     
     def send_expressiom
         ExpressionBroadcastJob.perform_later(self)
