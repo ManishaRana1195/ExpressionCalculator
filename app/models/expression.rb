@@ -22,7 +22,12 @@ class Expression < ApplicationRecord
             value_a = stack_operand.pop()
             value_b = stack_operand.pop()
             operator = stack_operator.pop()
-            stack_operand.append(calculate(value_a, value_b, operator))
+            value = calculate(value_a, value_b, operator)
+            if value
+                stack_operand.append()
+            else
+                return nil
+            end
         end
         result = stack_operand.pop()
         final_expression = "#{expression} = #{result}"
@@ -60,7 +65,12 @@ class Expression < ApplicationRecord
     end
 
     def calculate(value_a, value_b, operator)
-        return value_a / value_b if operator == "/"
+        if operator == "/"
+            if value_b == 0 or value_a == 0
+                return nil
+            end
+            return value_a/ value_b
+        end
         return value_a + value_b if operator == "+"
         return value_a - value_b if operator == "-"
         return value_a * value_b if operator == "*"
