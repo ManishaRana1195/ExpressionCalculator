@@ -1,2 +1,17 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="jumbotron">
+  <h1 class="display-4" style="text-align:center; height:500px; overflow-y:scroll;">Calculation App</h1>
+ <div class="well" id="chat_form" >
+   <% @expressions.each do |expression| %>
+        <% render 'expressions/expression', expression: expression %>
+   <%end%> 
+ </div>
+
+ <%= form_with model: @expression do |f| %>
+    <div class="input-group md-3">
+        <%= f.text_field :body, placeholder:"Enter your mathematical expression", class:"form-control"%>
+        <div class="input-group-append">
+            <%= f.submit "Calculate", class:"btn btn-primary" %>
+        </div>
+    </div>
+    <% end %>
+</div>
