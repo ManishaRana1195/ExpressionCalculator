@@ -1,0 +1,64 @@
+.app {
+  background-color: #dcd3eb;
+  height: 80%;
+  width: 80%;
+  padding: 0px 75px;
+}
+
+.container {
+    align-items: center;
+    justify-content: center;
+  }
+
+.heading {
+  text-align: center;
+  font-family: Comfortaa;
+  font-size: 10vh;
+  color: #382757;
+  font-weight: bolder;
+}
+
+#chat_form {
+  height: 100%;
+  width: 60%;
+  background: white;
+}
+
+#expression_body{
+  width: 70%;
+  padding: 15px 10px;
+  margin: 0;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#expression_body::placeholder {
+  color: black;
+  font-weight: 300;
+}
+
+.expressions {
+  /* overflow: scroll; */
+  font-size: 15px;
+  color: #027369;
+  opacity: 0.9;
+  padding: 10px 200px 10px 100px;
+  /* border-radius: 20px; */
+  margin-bottom: 20px;
+  background-color: #9ff4da;
+  border-color: #027369;
+  justify-items: left;
+}
+
+.submit {
+  width: 10%;
+  font-size: 20px;
+  color: #9ff4da;
+  opacity: 0.9;
+  margin-top: 10px;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: #027369;
+  border-color: #027369;
+  border-width: 5px;
+}

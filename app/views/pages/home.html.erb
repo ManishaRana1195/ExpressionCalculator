@@ -1,17 +1,18 @@
 <div class="jumbotron">
-  <h1 class="display-4" style="text-align:center;">Calculation App</h1>
+  <h1 class="display-4 heading" style="text-align:center;">Calculation App</h1>
   
- <div class="well" id="chat_form" style="height:300px; overflow-y:scroll;">
+ <div class="container"> 
+ <div class="expressions" id="chat_form" style="height:300px; overflow-y:scroll;">
    <% @expressions.each do |expression| %>
         <%= render 'expressions/expression', expression: expression %>
    <%end%> 
  </div>
 
  <%= form_with model: @expression do |f| %>
-    <div class="input-group md-3">
-        <%= f.text_field :body, placeholder:"Enter your mathematical expression", class:"form-control"%>
+    <div class="input-group mb-3">
+        <%= f.text_field :body, placeholder:"Enter your mathematical expression", class:"form-control"%>    
         <div class="input-group-append">
-            <%= f.submit "Calculate", class:"btn btn-primary" %>
+             <%= f.submit "Calculate", class:"btn btn-primary submit" %>
         </div>
     </div>
 <% end %>
@@ -20,5 +21,6 @@
         <%= msg %>
     </div>
 <% end %>
+</div>
 
 </div>
